@@ -1,0 +1,55 @@
+#Header {
+    display: flex;
+    /* float: left; */
+    border-bottom: 2px solid black;
+}
+#Header img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 20rem;
+}
+
+#GameTitle {
+    font-family: sans-serif;
+    margin-left: 1rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+#GameStatus
+{
+    font-family: 'Mukta', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+#ShowImages
+{
+    display: grid;
+    justify-items: center;
+    /* align-items: center; */
+    /* grid-gap: ; */
+    width: 25rem;
+     margin: 10px auto;
+    grid-template-areas: 
+        'player_1Name  player_2Name'
+        'player_1img player_2img'
+    ;
+}
+#player_1Name
+{
+    grid-area: player_1Name;
+}
+#player_2Name{
+    grid-area: player_2Name;
+}
+#player_1img{
+    grid-area: player_1img;
+}
+#player_2img{
+    grid-area: player_2img;
+}
+#ShowImages img{
+    height: 10rem;
+    /* border: 1rem solid black; */
+    border-radius: 1.5rem;
+}

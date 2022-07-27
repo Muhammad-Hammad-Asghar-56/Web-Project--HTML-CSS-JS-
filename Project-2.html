@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project upto the L40</title>
+    <style>
+        html {
+            font-size: 16px;
+            color: white
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        header::before {
+            /* background-image: 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;        
+            z-index: -1; */
+            background: url("https://images.unsplash.com/photo-1541569863345-f97c6484a917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGhlJTIwc291cmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60") no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .conatiner {
+            flex-wrap: wrap;
+            background-color: black;
+            border-radius: 3rem;
+            padding: 10px 10px;
+            text-align: left;
+            
+        }
+
+        .leftsided {
+            /* padding-top: 10px; */
+            font-size: 2rem;
+            float: left;
+            width: 40%;
+        }
+
+        nav {
+            font-size: 1.2em;
+            padding-left: 350px;
+        }
+
+        nav li {
+            margin: 10px 10px;
+            list-style: none;
+            overflow: auto;
+            display: inline;
+            padding-bottom: 5px;
+            flex-direction: row;
+        }
+
+        nav ul li input[type="search"] {
+            position: relative;
+            left: 40px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            font-size: 1.21em;
+
+        }
+
+        .description {
+            overflow: hidden;
+            text-align: center;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            /* remove the over data*/
+        }
+
+        .box {
+            color: black;
+            margin-top: 150px;
+            overflow: hidden;
+            text-align: center;
+            border: 0.5px solid black;
+            height: 200px;
+            width: 250px;
+            padding: 20px 20px;
+            margin: 10px 120px;
+            float: left;
+        }
+
+        /* .box:hover {
+            
+            height: 300px;
+            width: 200px;
+        } */
+
+        #Box_1:hover {
+
+            height: 300px;
+            width: 200px;
+        }
+
+        #Box_2:hover {
+            height: 300px;
+            width: 200px;
+        }
+
+        #Box_3:hover {
+            height: 300px;
+            width: 200px;
+        }
+
+        .moreDetailsbutton {
+            width: 4rem;
+            height: 4rem;
+            border: 2px solid gray;
+            background-color: black;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 90vw;
+            top: 20vh;
+        }
+
+        .moreDetailsbutton:hover {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 40px;
+        }
+
+        .moreDetailsbutton:active {
+            background-color: rgb(49, 44, 44);
+        }
+        header div img{
+            width:50px;
+            height: 50px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="conatiner">
+            <div class="leftsided">
+                <img src="Images/logo.png" alt="logo">
+                <span>Pharmacy</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><input type="search" name="search" id="" placeholder="Search"></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <div class="description">
+
+        <div class="moreDetailsbutton">More</div>
+        <div class="box" id="Box_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure autem eveniet illum
+            dignissimos iste, fuga voluptas similique quibusdam aliquid quod dolorem soluta expedita suscipit ex ea
+            debitis
+            nobis facere cumque veritatis, amet, libero pariatur voluptatibus. Hic sequi ducimus nemo minus magnam
+            assumenda, molestiae accusantium quo tempore impedit quos. Odit, necessitatibus.</explicabo>
+        </div>
+        <div class="box" id="Box_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at vel cupiditate
+            sint perferendis in deserunt rem fugit dicta explicabo.
+        </div>
+        <div class="box" id="Box_3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima at vel cupiditate
+            sint perferendis in deserunt rem fugit dicta explicabo.
+        </div>
+    </div>
+</body>
+
+</html>
