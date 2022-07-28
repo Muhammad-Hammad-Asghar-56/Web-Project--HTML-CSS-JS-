@@ -3,6 +3,7 @@
     /* float: left; */
     border-bottom: 2px solid black;
 }
+
 #Header img {
     width: 10rem;
     height: 10rem;
@@ -16,40 +17,70 @@
     justify-items: center;
     align-items: center;
 }
-#GameStatus
-{
+
+#GameStatus {
     font-family: 'Mukta', sans-serif;
     font-size: 3rem;
     text-align: center;
 }
-#ShowImages
-{
+
+#ShowImages {
     display: grid;
     justify-items: center;
     /* align-items: center; */
     /* grid-gap: ; */
     width: 25rem;
-     margin: 10px auto;
-    grid-template-areas: 
+    margin: 10px auto;
+    grid-template-areas:
         'player_1Name  player_2Name'
         'player_1img player_2img'
+        'player1Score player2Score'
     ;
 }
-#player_1Name
-{
+
+#player_1Name {
     grid-area: player_1Name;
 }
-#player_2Name{
+
+#player_2Name {
     grid-area: player_2Name;
 }
-#player_1img{
+
+#player_1img {
     grid-area: player_1img;
 }
-#player_2img{
+
+#player_2img {
     grid-area: player_2img;
 }
-#ShowImages img{
+
+#ShowImages img {
     height: 10rem;
     /* border: 1rem solid black; */
     border-radius: 1.5rem;
+}
+
+#payer_1score {
+    grid-area: "player1Score";
+    font-size: 2rem;
+}
+
+#payer_2score {
+    grid-area: "player1Score";
+    font-size: 2rem;
+}
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+}
+button{
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    margin: 10px 10px;
+    font-size: 1.4rem;
+    background-color: black;
+    color: white ;
 }

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
     <title>Dice</title>
 </head>
-
-<body>
+<!--  -->
+<body onload="initalizeGame()">
 
     <!-- <div></div> -->
     <div id="Header">
@@ -29,7 +29,16 @@
         </div>
         <div id="player_1img"><img src="Images/Dice_6.jpg" alt=""></div>
         <div id="player_2img"><img src="Images/Dice_6.jpg" alt=""></div>
-
+        <div id="payer_1score" class="score">
+            <h2>-</h2>
+        </div>
+        <div id="payer_2score" class="score">
+            <h2>-</h2>
+        </div>
+    </div>
+    <div id="buttons">
+        <button onclick="initalizeGame()">Reset</button>
+        <button onclick="PlayerGame()">Play Again</button>
     </div>
     <script src="script.js">
 
