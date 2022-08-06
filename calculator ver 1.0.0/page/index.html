@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Calculator ver 1.0.0</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #logoName {
+        display: inline-flex;
+    }
+
+    nav {
+        padding-top: 1rem;
+        border-bottom: 1px solid black;
+        /* background-color: gray; */
+    }
+
+    #calculatorLayout {
+        margin-top: 2rem;
+    }
+
+    #display {
+        /* width: 30vw; */
+        margin: 2rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #buttonGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 30%;
+    }
+
+    #buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .btn {
+        display: inline-block;
+        border: 2px solid black;
+        background-color: lightgray;
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+        margin: 10px;
+    }
+    input{
+        display: inline-block;
+        border: 2px solid black;
+        background-color: lightgray;
+        padding: 2rem 2rem;
+        border-radius: 1rem;
+        margin: 10px;
+
+    }
+    #textbox {
+        border-bottom: 1px solid black;
+        font-size: 1.3rem;
+    }
+
+    #footer {
+        text-align: center;
+        position: absolute;
+        top: 90%;
+        left: 50vw;
+    }
+</style>
+
+<body>
+    <div id="header">
+
+        <nav>
+            <div id="logoName">
+                <img src="" alt="Pic">;
+                <h1>Calculator</h1>
+            </div>
+        </nav>
+    </div>
+    <div id="content">
+
+        <div id="calculatorLayout">
+            <div id="display">
+                <input type="text" name="" id="">
+                <textarea name="equation" id="textbox" cols="80" rows="4">Enter the Equation</textarea>
+            </div>
+            <form action="/" method="post">
+                <div id="buttons">
+                    <div id="buttonGrid">
+                        <div type="button" class="btn" id="1">1</div>
+                        <div type="button" class="btn" id="2">2</div>
+                        <div type="button" class="btn" id="3">3</div>
+                        <div type="button" class="btn" id="+">+</div>
+                        <div type="button" class="btn" id="4">4</div>
+                        <div type="button" class="btn" id="5">5</div>
+                        <div type="button" class="btn" id="6">6</div>
+                        <div type="button" class="btn" id="-">-</div>
+                        <div type="button" class="btn" id="7">7</div>
+                        <div type="button" class="btn" id="8">8</div>
+                        <div type="button" class="btn" id="9">9</div>
+                        <div type="button" class="btn" id="*">*</div>
+                        <!-- <div class="btn" id="=">=</div> -->
+                        <div type="button" class="btn" id="AC">AC</div>
+                        <div type="button" class="btn" id="CE">CE</div>
+                        <input type="submit" value="="  id="=">
+                        <div type="button" class="btn" id="/">/</div>
+                    </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+        <p>&#169 M H Asghar 2021-CS-56</p>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        let Equation = "";
+        let operateAddInEquation = false;
+        $(".btn").click(function () {
+            var userChosenBtn = $(this).attr("id");
+            if (isNumber(userChosenBtn) || isOperates(userChosenBtn)) {
+                console.log(userChosenBtn);
+                Equation += (userChosenBtn);
+            }
+            else {
+                isEditText(userChosenBtn);
+            }
+            updateEquation();
+        });
+        function isOperates(text) {
+            if (text == '*' || text == '/' || text == '-' || text == '+') {
+                operateAddInEquation = true;
+                return true;
+            }
+            return false;
+        }
+        function updateEquation() {
+            $("#display").text(`${Equation}`);
+
+        }
+        function isEditText(text) {
+            if (text == `AC`) { Equation = " " }
+            if (text == `CE`) { Equation = Equation.substring(0, Equation.length - 1) };
+        }
+        function isNumber(text) {
+            for (let i = 0; i < 10; i++) {
+                if (i == text) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
