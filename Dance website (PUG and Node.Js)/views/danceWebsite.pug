@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style 
+            include ../static/style.css
+        title Dance academy
+    body 
+        section.nav 
+            nav 
+                ul
+                    li #[a(href="/") Home]
+                    li #[a(href="/") About]
+                    li #[a(href="/") Services]
+                    li #[a(href="/") Class Info]
+                    li #[a(href="/") Contact Us]
+        section#introSection
+            div Welcome to Harry's Dance Academy
+            div.small Eat Sleep Dance Repeat
+        section#Mission.pages
+            h2 Mission
+            div.cardContainer
+                div.card
+                     h3 Dance Perfection
+                div.card
+                     h3 Dance Tips
+                div.card
+                     h3 Dance Expert
+        section.pages#sponsorSection 
+        section#footer
