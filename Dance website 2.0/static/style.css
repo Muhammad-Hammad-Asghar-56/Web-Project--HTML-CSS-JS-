@@ -1,18 +1,15 @@
 * {
     margin: 0px 0px;
 }
-
 /* ____________________________________________________ */
 nav {
     background-color: rgba(214, 65, 65, 0.849);
-    padding: 2rem;
-    /* width: 100vw; */
+    padding: 0.8rem;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
@@ -30,7 +27,19 @@ nav ul li a {
 nav ul li a:hover {
     font-size: 2rem;
 }
-
+ul #logo{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#logo img{
+    height: 5rem;
+    width: 6rem;
+    border-radius: 7rem;
+    margin-right: 1rem;
+}
 /* ____________________________________________________ */
 .pages {
     height: 99vh;
@@ -43,9 +52,9 @@ nav ul li a:hover {
     justify-content: center;
     font-size: 2.2rem;
     align-items: center;
-    background: center/cover no-repeat url("../static/Dance2.jpg") ;
+    background: center/cover no-repeat url('static/images/background2.jpg'); 
     height: 100vh;
-    background-color: rgb(88, 85, 85);
+    
 }
 .small{
     font-size: 1.7rem;
@@ -60,12 +69,25 @@ nav ul li a:hover {
     grid-template-columns: 1fr 1fr 1fr;
 }
 .cardContainer .card{
-    height: 200px;
+    height: 20rem;
     /* width:100px; */
     border: 2px solid black;
     margin: 2rem;
+    border-radius: 2rem;
     
 }
 .cardContainer h3{
-    text-align: center;    
+    text-align: center;  
+    font-size: 2rem;  
+}
+.missonDescriptionContainer{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.missonDescriptionContainer img{
+    width: 16rem;
+    height: 16rem;
 }
