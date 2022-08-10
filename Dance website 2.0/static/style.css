@@ -60,13 +60,15 @@ ul #logo{
     font-size: 1.7rem;
 }
 /* ____________________________________________________________________----- */
-#Mission h2{
+#Mission > h2{
     text-align: center;
     padding: 2rem;
+    font-size: 3rem;
 }
 .cardContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
 }
 .cardContainer .card{
     height: 20rem;
@@ -74,7 +76,7 @@ ul #logo{
     border: 2px solid black;
     margin: 2rem;
     border-radius: 2rem;
-    
+    padding: 2rem;
 }
 .cardContainer h3{
     text-align: center;  
@@ -90,4 +92,28 @@ ul #logo{
 .missonDescriptionContainer img{
     width: 16rem;
     height: 16rem;
+}
+/* _____________________________________________________ */
+#sponsorSection h2{
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;
+}
+#spnsonerLogos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#spnsonerLogos > img{
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 12rem;
+    height: 12rem;
+}
+/* ____________________________________________________ */
+#footer{
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
 }
