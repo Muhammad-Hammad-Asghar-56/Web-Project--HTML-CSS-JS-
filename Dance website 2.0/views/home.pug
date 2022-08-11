@@ -1,0 +1,38 @@
+extends base.pug
+
+block scripts
+  script(src='/static/script.js')
+block style 
+    style 
+        include ../static/style.css
+
+block content
+    section#introSection
+        div Welcome to Harry's Dance Academy
+        div.small Eat Sleep Dance Repeat 
+
+    section#Mission
+        h2 Mission
+        div.cardContainer
+            div.card
+                h3 Dance Perfection
+                div.missonDescriptionContainer
+                    img(src="static/images/perfection.png", alt="", srcset="")
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus 
+            div.card
+                h3 Dance Tips
+                div.missonDescriptionContainer
+                    img(src="static/images/danceTips.png", alt="", srcset="")
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus
+            div.card
+                h3 Dance Expert
+                div.missonDescriptionContainer
+                    img(src="static/images/expert.png", alt="", srcset="")
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem pariatur corporis laboriosam minus
+
+    section#sponsorSection 
+        h2  Sponsors 
+        div#spnsonerLogos
+            img(src="static/images/Sponsers/nike.png", alt="", srcset="")
+            img(src="static/images/Sponsers/adidas.png", alt="", srcset="")
+            img(src="static/images/Sponsers/hp.png", alt="", srcset="")

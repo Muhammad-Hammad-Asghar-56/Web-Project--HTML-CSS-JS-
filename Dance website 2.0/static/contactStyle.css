@@ -1,0 +1,39 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#container > h1 {
+    padding: 2rem;
+    text-decoration: underline;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formContainer>input {
+    /* width: 30vw; */
+    border: 2px solid black;
+    padding: 1rem 10rem;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    outline: none;
+}
+
+#formContainer>input :hover {
+    box-shadow: 2px solid black;
+}
+
+#SubmitBtn {
+    margin: 5rem;
+    padding: 1rem;
+    background-color: #dc5e5e;
+    color: black;
+    border-radius: 1rem;
+}

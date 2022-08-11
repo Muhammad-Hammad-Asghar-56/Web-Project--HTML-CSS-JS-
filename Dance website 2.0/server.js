@@ -11,7 +11,10 @@ app.set('view engine', 'pug');
 // Set the views directory
 app.set('views', path.join(__dirname, 'views'));
 app.get('/',(req,res)=>{
-    res.status(200).render('index.pug',{});
+    res.status(200).render('home.pug',{});
+})
+app.get('/contact',(req,res)=>{
+    res.status(200).render('contact.pug',{});
 })
 app.post('/',()=>{
     console.log("Something is post");
