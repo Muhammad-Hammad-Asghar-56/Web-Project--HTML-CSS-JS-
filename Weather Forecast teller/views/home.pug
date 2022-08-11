@@ -1,0 +1,22 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Weather Forecast
+        style 
+            include ../static/style.css
+    body 
+        section
+            nav 
+                ul  
+                    li Weather Forecast
+                    li #[a(href="/") Home ]
+        section#details     
+            h2 Location details 
+            form(action="/", method="post" id="inputContainer") 
+                input(type="text", name="city" placeHolder="Enter the name of city")
+                input(type="text", name="country" placeHolder="Enter the name of country")
+                button(type="submit" ) Submit
+    footer#foot 
+        p CopyRight Muhammad Hammad Asghar 2021-CS-56 | All reserved rights

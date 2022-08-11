@@ -4,7 +4,7 @@ const bodyParser=require('body-parser');
 const { urlencoded } = require('body-parser');
 // module.exports = router;
 const app=express();
-app.use(bodyParser,urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.get('/',(req,res)=>{
     res.sendFile(__dirname +   '/page/index.html');
 })
