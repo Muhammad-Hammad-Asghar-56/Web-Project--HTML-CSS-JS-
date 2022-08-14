@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+body {
+    background: #ffffff url("static/background.png") no-repeat;
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    height: 100vh;
+}
+
+h1 {
+    display: inline;
+    font-family: 'Rubik Burned', cursive;
+    font-size: 40px;
+    background-color: rgb(215, 78, 219);
+    border-radius: 5px;
+    box-shadow: 1px 2.8px rgba(97, 85, 85, 0.247);
+    padding: 15px;
+
+}
+
+li {
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+form>input {
+    margin: 20px;
+    
+}
+
+#addItemBtn {
+    border: 1px solid black;
+    font-size: 20px;
+    border-radius: 4rem;
+    padding: 5px 1rem;
+}
+
+#box {
+    border: 1px solid rgb(177, 168, 168);
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+    background-color: rgba(248, 248, 255, 0.459);
+    /* opacity: 0.5; */
+}
+#addNewItemName{
+    height: 30px;
+    width: 300px;
+    border: 1px solid gray;
+    box-shadow: 1px 2px;
+    border-radius: 2px;
+    /* outline: none; */
+    text-align: center;   
+}
+ul li >p{
+    margin-left: 20px;
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+}
+input:checked+p{
+    text-decoration:line-through;
+}
