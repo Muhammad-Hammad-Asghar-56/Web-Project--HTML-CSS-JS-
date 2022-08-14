@@ -1,0 +1,17 @@
+{
+  "name": "personal-blog",
+  "version": "1.0.0",
+  "description": "Personal blog pug + node.JS + backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "M H Auther",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "pug": "^3.0.2"
+  }
+}
