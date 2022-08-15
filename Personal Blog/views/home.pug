@@ -12,6 +12,8 @@ block content
         
         for item in displayList
             h1=item.title
-            p=item.message
+            div#paragraphLink
+                p=item.message.substr(1, 100) + '...'
+                a(href="http://") Readme 
 
 

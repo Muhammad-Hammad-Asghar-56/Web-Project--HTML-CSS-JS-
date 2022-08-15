@@ -1,4 +1,15 @@
 #container{
     margin: 0px 35px;
     height: 80vh;
+    
+}
+#paragraphLink{
+    margin: 0px 0px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+p{
+    margin: 0px 0px;
 }
