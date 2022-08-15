@@ -3,4 +3,15 @@ extends Base.pug
 block style 
     style
         include ..\static\baseStyle.css
-block content 
+        include ..\static\homeStyle.css
+block content
+    section#container
+        h1 Home
+        p=homedata   
+        - var displayList= postList;  
+        
+        for item in displayList
+            h1=item.title
+            p=item.message
+
+

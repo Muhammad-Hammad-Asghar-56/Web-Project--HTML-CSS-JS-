@@ -1,0 +1,35 @@
+#messageInput{
+    height: 60vh;
+    width: 80vw;
+    resize:none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+body{
+    height: 80vh;
+}
+#title{
+    height: 40px;
+    width: 30vw;
+}
+h1{
+    margin-left: 35px;
+    font-size: 30px;
+}
+#textContanier{
+    margin-left: 80px;
+}
+#submitBtn{
+    display: block;
+    padding:10px 20px;
+
+    margin-right: 170px;
+    margin-top: 10px;
+}
+#btnContanier{
+    display: flex;
+    justify-content:  right;
+    align-items: center;
+    /* flex-direction: column; */
+    
+}

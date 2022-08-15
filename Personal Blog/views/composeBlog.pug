@@ -1,0 +1,15 @@
+extends Base.pug 
+block style 
+    style 
+        include ../static/composeStyle.css
+        include ..\static\baseStyle.css
+block content
+    section
+        h1 Compose 
+        form(action="/compose", method="post" id="textContanier") 
+            h4 Title
+            input(type="text", name="title" id="title")
+            h4 Message
+            textarea(name="composeNew", cols="30", rows="10",id="messageInput") 
+            div#btnContanier
+                button(type="submit" id="submitBtn") Post

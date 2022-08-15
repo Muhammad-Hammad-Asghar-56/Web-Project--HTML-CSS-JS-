@@ -1,12 +1,13 @@
 *{
     box-sizing: border-box;
 }
+
 #footer {
-    display: flex;
-    position: absolute;
-    top: 90vh;
-    left: 35vw;
     margin:0px auto;
+    text-align: center;
+}
+body{
+    min-height: 100vh-10px;
 }
 #webName{
     font-size: 20px;
