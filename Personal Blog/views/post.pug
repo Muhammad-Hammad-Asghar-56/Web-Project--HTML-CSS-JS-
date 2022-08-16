@@ -1,0 +1,10 @@
+extends Base.pug
+
+block style 
+    style
+        include ..\static\baseStyle.css
+        include ..\static\homeStyle.css
+block content
+    section#container
+        h1=post.title 
+        p=post.message

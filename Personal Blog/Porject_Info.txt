@@ -1,0 +1,16 @@
+This includes the Backend full flage website 
+1. Use Express as backend
+2. Use Pug view Template
+3. Use body-parser for get the information from the **compose.pug** file
+4. Introduce the Lodash to the **kabab style** url search      
+                
+
+.                Working
+
+1. How to Render Home/contact/about page
+    Server will send the initalied data to the different (home/contact/about) Pages and it will display the all data as it is
+2. How get the new post
+    Server receive the data on the http://127.0.0.1/compose and it will send back the all the data and catch by the servers and
+    add into the array and redirect to the home page which display all the data of the array.
+3. How to show the Post Pages
+    This also render the page and give the parameter.
