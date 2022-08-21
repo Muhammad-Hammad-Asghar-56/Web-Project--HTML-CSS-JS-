@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const e = require('express');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'pug');
@@ -48,8 +49,6 @@ app.get('/', (req, res) => {
             res.render('index.pug', parmas);
         }
     });
-
-
 })
 
 app.post('/', (req, res) => {
@@ -74,6 +73,36 @@ app.post('/delete', (req, res) => {
     })
 
 })
+// _________________________________________________________________________
+const defaultItems=["Add New items","Display Items",",<- delete Items"]
+const subListSchema = mongoose.Schema({
+    name:String,
+    items: defaultItems
+})
+const subList=mongoose.model('Sublists',subListSchema);
+app.get("/todoList/:title",(req,res)=>{
+    console.log(req.params.title);
+    subList.findOne({name:req.params.title},(err,foundItem)=>{
+        if(!err){
+            if(foundItem == null){
+                const newSubListItem= new subList({
+                    name : req.params.title,
+                    items:defaultItems
+                }) 
+                newSubListItem.save();
+            }
+            else{
+                req.render('index.pug',params);
+            }
+        }
+    })
+})
+function IsInSubList()
+{
+    
+}
+
+
 
 //_________________________________________________________________________
 //                          Validations
