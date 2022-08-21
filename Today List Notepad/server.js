@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const e = require('express');
+const { render } = require('pug');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'pug');
@@ -81,8 +82,12 @@ const subListSchema = mongoose.Schema({
 })
 const subList=mongoose.model('Sublists',subListSchema);
 app.get("/todoList/:title",(req,res)=>{
+    var today = new Date();
+    var options = { weekday: 'long', month: 'long', day: 'numeric' };
+
     console.log(req.params.title);
     subList.findOne({name:req.params.title},(err,foundItem)=>{
+        let params={};
         if(!err){
             if(foundItem == null){
                 const newSubListItem= new subList({
@@ -90,10 +95,19 @@ app.get("/todoList/:title",(req,res)=>{
                     items:defaultItems
                 }) 
                 newSubListItem.save();
+                params={
+                    Day: today.toLocaleDateString('en-US', options),
+                    items:newSubListItem.items
+                }
             }
             else{
-                req.render('index.pug',params);
+                params={
+                    Day: today.toLocaleDateString('en-US', options),
+                    items:foundItem.items
+                }
             }
+            console.log(params);
+            res.render('templatePage.pug',params);
         }
     })
 })
