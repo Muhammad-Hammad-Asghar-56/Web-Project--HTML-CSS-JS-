@@ -15,12 +15,13 @@ html(lang="en")
             div#box
                 -var no=0;
                 ul
+                    -console.log(item)
                     each val in item
                         -no++
                         li
-                            input(type="checkbox", name="")
-                            p=val
-
+                            form(action="/delete", method="post" class="Items") 
+                                input(type="checkbox" name=`delete` value=val._id    onChange="this.form.submit()" )
+                                p(name ="value")=val.toDoItem
             form(action="/", method="post") 
                 input(type="text", name="textInput" id="addNewItemName"  autocomplete="off" placeHolder="Enter the New Items")
                 button(type="submit" id='addItemBtn') +

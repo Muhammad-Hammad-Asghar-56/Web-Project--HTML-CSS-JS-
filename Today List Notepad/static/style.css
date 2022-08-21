@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-body {
+html{
+
     background: #ffffff url("static/background.png") no-repeat;
     height: 100%;
-
+    
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 img {}
 
 #container {
@@ -18,7 +18,7 @@ img {}
     justify-content: center;
     align-items: center;
     margin: 0px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 h1 {
@@ -35,8 +35,6 @@ h1 {
 li {
     list-style: none;
     font-size: 20px;
-    display: flex;
-    flex-direction: row;
 }
 
 form>input {
@@ -45,7 +43,8 @@ form>input {
 }
 
 #addItemBtn {
-    border: 1px solid black;
+    border: 1px solid  rgb(201, 120, 204);
+    background-color: rgb(211 81 215);
     font-size: 20px;
     border-radius: 4rem;
     padding: 5px 1rem;
@@ -67,6 +66,7 @@ form>input {
     border-radius: 2px;
     /* outline: none; */
     text-align: center;   
+    
 }
 ul li >p{
     margin-left: 20px;
@@ -75,4 +75,8 @@ ul li >p{
 }
 input:checked+p{
     text-decoration:line-through;
+}
+.Items{
+    display: flex;
+    flex-direction: row;
 }
