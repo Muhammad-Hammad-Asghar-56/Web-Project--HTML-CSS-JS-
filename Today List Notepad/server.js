@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
     var today = new Date();
     var options = { weekday: 'long', month: 'long', day: 'numeric' };
 
-    
+
     toDoModel.find((err, itemsList) => {
         if (err) {
             console.log(err);
@@ -54,17 +54,17 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     var newItem = req.body.textInput;
-    if (newItem != "" && (! isPresentInList(newItem))) {
-        let newToDoItem= new toDoModel({toDoItem:newItem});
+    if (newItem != "" && (!isPresentInList(newItem))) {
+        let newToDoItem = new toDoModel({ toDoItem: newItem });
         newToDoItem.save();
     }
     res.redirect('/');
 })
 app.post('/delete', (req, res) => {
     console.log(req.body);
-    const id=req.body.delete;
-    toDoModel.findByIdAndRemove(id,(err)=>{
-        if(err){
+    const id = req.body.delete;
+    toDoModel.findByIdAndRemove(id, (err) => {
+        if (err) {
             console.log(err);
         }
         else {
@@ -75,61 +75,107 @@ app.post('/delete', (req, res) => {
 
 })
 // _________________________________________________________________________
-const defaultItems=["Add New items","Display Items",",<- delete Items"]
+const defaultItems = ["Add New items", "Display Items", ",<- delete Items"]
 const subListSchema = mongoose.Schema({
-    name:String,
+    name: String,
     items: defaultItems
 })
-const subList=mongoose.model('Sublists',subListSchema);
-app.get("/todoList/:title",(req,res)=>{
+const subList = mongoose.model('Sublists', subListSchema);
+app.get("/todoList/:title", (req, res) => {
     var today = new Date();
     var options = { weekday: 'long', month: 'long', day: 'numeric' };
 
-    console.log(req.params.title);
-    subList.findOne({name:req.params.title},(err,foundItem)=>{
-        let params={};
-        if(!err){
-            if(foundItem == null){
-                const newSubListItem= new subList({
-                    name : req.params.title,
-                    items:defaultItems
-                }) 
+    subList.findOne({ name: req.params.title }, (err, foundItem) => {
+        let params = {};
+        if (!err) {
+            if (foundItem == null) {
+                const newSubListItem = new subList({
+                    name: req.params.title,
+                    items: defaultItems
+                })
                 newSubListItem.save();
-                params={
+                params = {
                     Day: today.toLocaleDateString('en-US', options),
-                    items:newSubListItem.items
+                    itemsListName: newSubListItem.name,
+                    items: newSubListItem.items
                 }
             }
-            else{
-                params={
+            else {
+                params = {
                     Day: today.toLocaleDateString('en-US', options),
-                    items:foundItem.items
+                    itemsListName: foundItem.name,
+                    items: foundItem.items
                 }
             }
-            console.log(params);
-            res.render('templatePage.pug',params);
+            res.render('templatePage.pug', params);
         }
     })
 })
-function IsInSubList()
-{
-    
-}
+
+
+app.post('/deleteSubList/:subListName', (req, res) => {
+    console.log(req.params.subListName + "    " + req.body.delete);
+    subList.findOne({ name: req.params.subListName }, (err, foundItem) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            for (let index = 0; index < foundItem.items.length; index++) {
+                // const element = foundItem.items[index];
+                if (foundItem.items[index] == req.body.delete) {
+                    // foundItem = foundItem.filter(item => item !== foundItem.items[index]);
+                    const val = req.body.delete;
+                    foundItem.items = foundItem.items.filter(item => item !== val);
+                    subList.updateOne({ _id: foundItem._id }, { items: foundItem.items }, function (err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log("Update Successfully");
+                            res.redirect(`/todoList/${req.params.subListName}`);
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+    })
+
+})
+app.post('/updateSubList/:subListName', (req, res) => {
+    console.log(req.params.subListName + " " + req.body.Add);
+    subList.findOne({ name: req.params.subListName }, (err, foundItem) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            foundItem.items.push(req.body.Add);
+            subList.updateOne({ _id: foundItem._id }, { items: foundItem.items }, function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Update Successfully");
+                    res.redirect(`/todoList/${req.params.subListName}`);
+                }
+            });
+        }
+    })
+})
 
 
 
 //_________________________________________________________________________
 //                          Validations
-//_________________________________________________________________________
-function isPresentInList(item){
+//________________________________________________________________________
+function isPresentInList(item) {
+    _
     toDoModel.find((err, itemsList) => {
         if (err) {
             console.log(err);
         }
         else {
-            itemsList.forEach(Element=>{
-                if (Element === item){
-                    return true ;
+            itemsList.forEach(Element => {
+                if (Element === item) {
+                    return true;
                 }
             })
         }
