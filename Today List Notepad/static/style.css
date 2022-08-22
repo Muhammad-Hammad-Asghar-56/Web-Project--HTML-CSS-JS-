@@ -30,6 +30,16 @@ h1 {
     padding: 15px;
 
 }
+h3 {
+    display: inline;
+    font-family: 'Rubik Burned', cursive;
+    font-size: 20px;
+    background-color: rgb(197, 155, 199);
+    border-radius: 5px;
+    box-shadow: 1px 2.8px rgba(97, 85, 85, 0.247);
+    padding: 15px;
+
+}
 
 li {
     list-style: none;
@@ -37,7 +47,7 @@ li {
 }
 
 form>input {
-    margin: 20px;
+    margin: 10px;
     
 }
 
