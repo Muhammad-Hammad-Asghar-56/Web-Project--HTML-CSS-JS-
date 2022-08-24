@@ -15,7 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'));
 //______________________________________________________________________________________
-const port = 80;
+let port = process.env.PORT;
+if(port==null || port ==""){
+        port=3000;
+}
 var blogShowRequest='';
 //_________________________________________________________________________________________________________
 //                                      Mongoose settings
