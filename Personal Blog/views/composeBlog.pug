@@ -5,11 +5,11 @@ block style
         include ..\static\baseStyle.css
 block content
     section
-        h1 Compose 
+        h1 Compose New Blog
         form(action="/compose", method="post" id="textContanier") 
             h4 Title
             input(type="text", name="title" id="title")
             h4 Message
-            textarea(name="composeNew", cols="30", rows="10",id="messageInput") 
+            textarea(name="composeNew", cols="20", rows="5",id="messageInput") 
             div#btnContanier
                 button(type="submit" id="submitBtn") Post
